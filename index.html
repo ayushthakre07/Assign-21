@@ -1,0 +1,130 @@
+<html>
+    <head>
+
+        
+        <title>
+            Area of Rectangle
+        </title>
+        <style>
+.container{
+
+justify-content: center;
+align-items: center;
+height: 100vh;
+font-size: 30px;
+
+}
+.calculator{
+    background-color: #f4f4f4;
+    border: 1px solid #B77466;
+    width: 600px;
+    padding: 10px 20px;
+}
+.font-fam{
+    font-family: POPPINS, sans-serif;
+}
+.input-num{
+    width: 100%;
+    font-size: 20px;
+    margin: 10px 0;
+    padding: 5px;   
+}
+.input-num:focus{
+    outline: none;
+}
+.btn-group{
+    display: flex;
+}
+.btn{
+    width: 30%;
+    display: block;
+    margin: 0 auto;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    background-color:#FFE1AF;
+    color: #050505;
+    cursor: pointer;
+    padding: 5px;
+}
+.btn-margin{
+    margin-top: -10px;
+}
+.text-result{
+    text-align: center;
+    margin-top: 20px;
+}
+.image{
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+    margin-bottom: -5px;
+}
+.image-result{
+    width: 30px;
+    height: 30px;
+    margin-left: -15px;
+    margin-bottom: -5px;
+}
+        </style>
+    </head>
+    
+    <body style="background-color:#c41313";>
+        
+        <div class="container">
+            <h1 >Calculator</h1>
+            
+            <div class="calculator font-fam"> 
+            Area of Rectangle(<i>l</i>*<i>w</i>)
+            <input type="number" class="input-num font-fam" id="input1" placeholder="Enter value(length)"/>
+
+            <input type="number" class="input-num font-fam" id="input2" placeholder="Enter value(width)"/>
+
+            <p id="clear" class="text-result">
+                Result <img src="./idea.png" class="image-result">
+            </p>
+            <div class="btn-group">
+
+            <button class="btn btn-margin font-fam" onclick="reset()">
+               Clear 
+            </button>
+
+            <button class="btn btn-margin font-fam" onclick="area()">
+                Calculate<img src="./keys.png" class="image">
+            </button>
+        </div>
+        </div>
+        </div>
+    <script>
+function area(){
+    const input1Element=document.getElementById("input1");
+    const input2Element=document.getElementById("input2"); 
+    const clearElement=document.getElementById("clear");
+
+const value1=input1Element.value;
+const value2=input2Element.value;
+if(value1 == ""){
+    alert("Enter the value of length");
+    return;
+}
+if(value2 == ""){
+    alert("Enter the value of width");
+    return;
+}
+    const area =
+    parseInt(input1Element.value) * parseInt(input2Element.value);
+    clearElement.innerText=`Area : ${area}`;
+    }
+
+    function reset(){
+    const input1Element=document.getElementById("input1");
+    const input2Element=document.getElementById("input2"); 
+    const clearElement=document.getElementById("clear");
+
+    input1Element.value="";
+    input2Element.value="";
+clearElement.innerText="Enter values";
+    }
+    </script>
+      </body>
+</html>
